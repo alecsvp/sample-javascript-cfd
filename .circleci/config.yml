@@ -36,6 +36,9 @@ jobs:
           name: Run tests
           command: yarn run test:unit
       - run:
+          name: Update eslint
+          command: npx update-browserslist-db@latest
+      - run:
           name: Run eslint
           executor: "eslint"
           command: yarn run lint

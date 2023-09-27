@@ -13,6 +13,7 @@ orbs:
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@5
   cypress: cypress-io/cypress@2.1.0
+  eslint: arrai/eslint@7.6.0
 
 jobs:
   # Below is the definition of your job to test your Node app. You can rename and customize it as you want.
@@ -34,6 +35,9 @@ jobs:
       - run:
           name: Run tests
           command: yarn run test:unit
+      - run
+          name: Install eslint
+          command: yarn
 
 workflows:
   # Below is the definition of your workflow.
@@ -47,5 +51,8 @@ workflows:
           executor: "node-cypress"
           command: yarn run test:e2e --headless
           yarn: true
+      -eslint/run:
+          executor: "eslint"
+          command: yarn init @eslint/config
       # For running simple node tests, you could optionally instead use the node/test job from the orb to replicate and replace the manually defined "test" job above in fewer lines.
       # - node/test

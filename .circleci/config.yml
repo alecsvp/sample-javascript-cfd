@@ -39,7 +39,7 @@ jobs:
           name: Update eslint
           command: npx update-browserslist-db@latest
       - run:
-          name: Run eslintt
+          name: Run eslinttt
           executor: "eslint"
           command: yarn run lint
 

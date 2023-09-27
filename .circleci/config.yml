@@ -47,7 +47,7 @@ jobs:
           command: git checkout master
       - run:
           name: Merge into master
-          command: git merge tests
+          command: git merge origin/tests
 
 
 

@@ -42,6 +42,13 @@ jobs:
           name: Run eslinttt
           executor: "eslint"
           command: yarn run lint
+      - run:
+          name: Checkout master
+          command: git checkout master
+      - run:
+          name: Merge into master
+          command: git merge tests
+
 
 
 workflows:

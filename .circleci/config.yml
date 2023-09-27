@@ -36,9 +36,9 @@ jobs:
           name: Run tests
           command: yarn run test:unit
       - run:
-          name: Config eslint
+          name: Run eslint
           executor: "eslint"
-          command: yarn init @eslint/config
+          command: yarn run lint
 
 
 workflows:

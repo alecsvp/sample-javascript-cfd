@@ -6,7 +6,7 @@ describe("CartItemCard.vue", () => {
     const menuItem = {
       id: 1,
       name: "French Fries",
-      description: "Fried potato rectangles",
+      description: "Fried potato rectangless",
       price: "4.99",
       imageId: "1",
     };

@@ -35,9 +35,6 @@ jobs:
       - run:
           name: Run tests
           command: yarn run test:unit
-      - run
-          name: Install eslint
-          command: yarn
 
 workflows:
   # Below is the definition of your workflow.
@@ -51,7 +48,7 @@ workflows:
           executor: "node-cypress"
           command: yarn run test:e2e --headless
           yarn: true
-      -eslint/run:
+      - eslint/run:
           executor: "eslint"
           command: yarn init @eslint/config
       # For running simple node tests, you could optionally instead use the node/test job from the orb to replicate and replace the manually defined "test" job above in fewer lines.
